@@ -31,7 +31,7 @@ export class Web3Service {
 
 
     //copy abi from remix compile/details tab - this is the contract API
-    var testContract = this.web3.eth.contract([
+    let testContract = this.web3.eth.contract([
       {
         "anonymous": false,
         "inputs": [
@@ -90,7 +90,7 @@ export class Web3Service {
     // this is the contract address, the contract address is from remix run tab after create click
     let contractAddress = '0x0c6f08546d8f7c837004f63ba373e3bec50b50bd';
     //define contract
-    var test = testContract.at(contractAddress);
+    let test = testContract.at(contractAddress);
 
 
     //perform transaction in async way
@@ -119,7 +119,7 @@ export class Web3Service {
 
 
     //get block by clock num
-    var Block = this.web3.eth.getBlock(15);
+    let Block = this.web3.eth.getBlock(15);
     console.log(Block);
 
 
@@ -135,18 +135,10 @@ export class Web3Service {
 
     get(this.web3, this.web3.eth.accounts[0]);
 
-    // test.getInstructor(function (error, result) {
-    //   if (!error) {
-    //     console.log(result)
-    //   } else {
-    //     console.error(error);
-    //   }
-    // })
-
 
     //listen to event on contract instead of requesting over and over
     //the parameters are optional
-    var instructorEvent = test.Instructor({}, {fromBlock: 17, toBlock: 'latest'});
+    let instructorEvent = test.Instructor({}, {fromBlock: 17, toBlock: 'latest'});
 
     instructorEvent.watch(function (error, result) {
       if (!error) {
@@ -156,11 +148,8 @@ export class Web3Service {
       }
     });
 
-    // test.setInstructor('haim', 3, (err, res) => {
-    //   if (err) {
-    //     //console.log(err);
-    //   }
-    // });
+    test.setInstructor('haim', 3, (result, err) => {
+    });
 
 
     // listen to even, and filter income

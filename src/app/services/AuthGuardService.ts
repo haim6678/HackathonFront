@@ -3,6 +3,7 @@ import {ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot} from '
 import {Injectable} from "@angular/core";
 import {Observable} from "rxjs/index";
 
+
 @Injectable()
 export class AuthGuardService implements CanActivate {
 
