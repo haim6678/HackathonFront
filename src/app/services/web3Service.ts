@@ -171,10 +171,47 @@ export class Web3Service {
     });
 
     filter.watch((error, result) => {
-      console.log(result);
-    })
+      //console.log(result);
+    });
 
+    //get number of sent transactions
+    let num = this.web3.eth.getTransactionCount(this.web3.eth.accounts[0]);
+    //console.log(num);
 
+    //get last range of transactions for given account
+    let temp = this.getTransactionsByAccount(this.web3.eth.accounts[0], 15, 20);
+    console.log(temp)
+
+  }
+
+  getTransactionsByAccount(myaccount, startBlockNumber, endBlockNumber) {
+    //get end block
+    if (endBlockNumber == null) {
+      endBlockNumber = this.web3.eth.blockNumber;
+    }
+
+    //if start is null get last 10 blocks
+    if (startBlockNumber == null) {
+      startBlockNumber = endBlockNumber - 10;
+    }
+    console.log("Searching for transactions to/from account \"" + myaccount + "\" within blocks " + startBlockNumber + " and " + endBlockNumber);
+
+    let arr = [];
+    for (let i = startBlockNumber; i <= endBlockNumber; i++) {
+      if (i % 1000 == 0) {
+        console.log("Searching block " + i);
+      }
+      let block = this.web3.eth.getBlock(i, true);
+      if (block != null && block.transactions != null) {
+        block.transactions.forEach(function (e) {
+          if (myaccount == "*" || myaccount == e.from || myaccount == e.to) {
+            console.log(e);
+            arr.push(e);
+          }
+        })
+      }
+    }
+    return arr;
   }
 
   public creatAccount() {
