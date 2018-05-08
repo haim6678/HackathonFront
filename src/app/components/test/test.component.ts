@@ -11,12 +11,17 @@ import {Web3Service} from "../../services/web3Service";
 
 export class TestComponent implements OnInit {
 
+  age;
+  name;
 
-  constructor(private web3: Web3Service) {
+  constructor(private web: Web3Service) {
   }
 
 
   ngOnInit() {
   }
 
+  onSub() {
+
+  }
 }
