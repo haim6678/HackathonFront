@@ -12,8 +12,9 @@ import {Web3Service} from "../../services/web3Service";
 export class TestComponent implements OnInit {
 
 
-  constructor(private web3:Web3Service) {
+  constructor(private web3: Web3Service) {
   }
+
 
   ngOnInit() {
   }
