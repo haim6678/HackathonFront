@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-log-in',
@@ -10,7 +11,7 @@ export class LogInComponent implements OnInit {
   email = '';
   password = '';
 
-  constructor() {
+  constructor(private router: Router) {
   }
 
   ngOnInit() {
@@ -18,5 +19,6 @@ export class LogInComponent implements OnInit {
 
   onSubmit() {
 
+    this.router.navigate(['']);
   }
 }

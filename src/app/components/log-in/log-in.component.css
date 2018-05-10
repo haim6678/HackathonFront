@@ -98,6 +98,10 @@ input[type=button], input[type=submit], input[type=reset], button {
   transition: all 0.3s ease-in-out;
 }
 
+button {
+  cursor: pointer;
+}
+
 input[type=button]:hover, button, input[type=submit]:hover, input[type=reset]:hover {
   background-color: #39ace7;
 }
