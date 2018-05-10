@@ -7,13 +7,25 @@ import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {NavigationBarComponent} from './components/navigation-bar/navigation-bar.component';
 import {AppRoutingModule} from './app-routing.module';
+import { LogInComponent } from './components/log-in/log-in.component';
+import { RegisterComponent } from './components/register/register.component';
+import { PageNotFountComponent } from './components/page-not-fount/page-not-fount.component';
+import { MyAccountComponent } from './components/my-account/my-account.component';
+import {HomePageComponent} from "./components/home-page/home-page.component";
+import { AboutUsComponent } from './components/about-us/about-us.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     TestComponent,
-    NavigationBarComponent
+    NavigationBarComponent,
+    LogInComponent,
+    RegisterComponent,
+    PageNotFountComponent,
+    MyAccountComponent,
+    HomePageComponent,
+    AboutUsComponent
   ],
   imports: [
     AppRoutingModule,
