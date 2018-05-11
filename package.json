@@ -25,18 +25,19 @@
     "angular-bootstrap-md": "^6.0.2",
     "angular-font-awesome": "^3.1.2",
     "angular.less": "0.0.3",
+    "angularfire2": "^5.0.0-rc.2",
     "bootstrap": "^4.1.1",
     "core-js": "^2.5.4",
     "ethereumjs-testrpc": "^6.0.3",
     "font-awesome": "^4.7.0",
     "ganache-cli": "^6.1.0",
+    "ng-sidebar": "^7.1.0",
     "ngx-bootstrap": "^2.0.5",
+    "popper.js": "^1.12.5",
     "rxjs": "^6.1.0",
     "web3": "github:ethereum/web3.js",
     "web3-typescript-typings": "^0.10.2",
-    "zone.js": "^0.8.26",
-    "angularfire2": "^5.0.0-rc.2",
-    "popper.js": "^1.12.5"
+    "zone.js": "^0.8.26"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.6.0",

@@ -13,6 +13,7 @@ import {MyAccountComponent} from './components/my-account/my-account.component';
 import {HomePageComponent} from "./components/home-page/home-page.component";
 import {AboutUsComponent} from './components/about-us/about-us.component';
 import {PageNotFountComponent} from "./components/page-not-fount/page-not-fount.component";
+import { DashboardMainPageComponent } from './components/dashboard/dashboard-main-page/dashboard-main-page.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import {PageNotFountComponent} from "./components/page-not-fount/page-not-fount.
     PageNotFountComponent,
     MyAccountComponent,
     HomePageComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    DashboardMainPageComponent
   ],
   imports: [
     AppRoutingModule,
