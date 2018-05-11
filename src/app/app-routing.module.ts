@@ -8,7 +8,7 @@ const appRoutes: Routes = [
 
   {path: 'not-found', component: PageNotFountComponent},
   {path: '', component: HomePageComponent, pathMatch: 'full'},
-  {path: 'logIn', component: LogInComponent},
+  {path: 'userCenter/:action', component: LogInComponent},
   {path: '**', redirectTo: '/not-found'}
 ];
 

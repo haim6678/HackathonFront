@@ -11,6 +11,10 @@
   width: 100vw;
 }
 
+.ico {
+  color: white;
+}
+
 #logo .navbar-wagon-item .navbar-wagon-link {
   cursor: auto;
 }

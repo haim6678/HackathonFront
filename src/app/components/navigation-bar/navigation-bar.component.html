@@ -6,8 +6,8 @@
     <ul>
 
       <li class="navbar-wagon-item navbar-wagon-link">
-        <a routerLink=""> <span></span> <i
-          class="fa fa-american-sign-language-interpreting"> </i>
+        <a routerLink=""> <span></span>
+          <i class="fa fa-american-sign-language-interpreting"> </i>
           Haim </a>
       </li>
       <li class="navbar-wagon-item ">
@@ -29,8 +29,8 @@
 
   <div class="right hidden-xs hidden-sm">
 
-    <a routerLink="/logIn" class="navbar-wagon-item ">Log-In</a>
-    <a href="#" class="navbar-wagon-item ">Register</a>
+    <a [routerLink]="['/userCenter','login']" class="navbar-wagon-item "><span></span> <i class="fab fa-500px"></i>Log-In</a>
+    <a [routerLink]="['/userCenter','register']" class="navbar-wagon-item ">Register</a>
 
 
   </div>

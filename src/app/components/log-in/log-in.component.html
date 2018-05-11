@@ -1,27 +1,48 @@
 <div class="wrapper fadeInDown">
   <div id="formContent">
-    <!-- Tabs Titles -->
-    <h2 class="active"> Sign In </h2>
+
+    <h2 class="upperNav" (click)="navigate('login')" [ngClass]="{'active':action == 'login'}"> Sign In </h2>
+    <h2 class="upperNav" (click)="navigate('register')" [ngClass]="{'active':action == 'register'}">Sign Up </h2>
 
     <!-- Icon -->
     <div class="fadeIn first">
       <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon"/>
     </div>
 
-    <!-- Login Form -->
-    <form (ngSubmit)="onSubmit()" #LogInForm="ngForm">
-      <input required email type="text" id="email"
-             [(ngModel)]="email"
-             class="fadeIn second" name="email" placeholder="email">
-      <input required type="password" id="password" [(ngModel)]="password"
-             [ngClass]="{'fadeIn':true,'third':true,'pass':true}" name="password"
-             placeholder="password">
-      <button class="fadeIn fourth" [disabled]="!LogInForm.valid">Log In</button>
-    </form>
+    <div *ngIf="action =='login'; then login else register "></div>
+    <ng-template #login>
+      <!-- Login Form -->
+      <form (ngSubmit)="onLogIn()" #LogInForm="ngForm">
+        <input required email type="text" id="email"
+               [(ngModel)]="email"
+               class="fadeIn second" name="email" placeholder="email">
+        <input required type="password" id="password" [(ngModel)]="password"
+               [ngClass]="{'fadeIn':true,'third':true,'pass':true}" name="password"
+               placeholder="password">
+        <button class="fadeIn fourth" [disabled]="!LogInForm.valid">Log In</button>
+      </form>
 
-    <div id="formFooter">
-      <a class="underlineHover" href="#">Forgot Password?</a>
-    </div>
+      <div id="formFooter">
+        <a class="underlineHover" href="#">Forgot Password?</a>
+      </div>
+    </ng-template>
 
+    <ng-template #register>
+      <form (ngSubmit)="onRegister()" #RegisterForm="ngForm">
+        <input required email type="text" id="name"
+               [(ngModel)]="registerName"
+               class="fadeIn second" name="name" placeholder="name">
+        <input required email type="text" id="email1"
+               [(ngModel)]="registerEmail"
+               class="fadeIn second" name="email1" placeholder="email">
+        <input required type="password" id="password1" [(ngModel)]="registerPassword"
+               [ngClass]="{'fadeIn':true,'third':true,'pass':true}" name="password1"
+               placeholder="password">
+        <input required type="password" id="passwordRe1" [(ngModel)]="registerReEnterPassword"
+               [ngClass]="{'fadeIn':true,'third':true,'pass':true}" name="passwordRe1"
+               placeholder="re enter password">
+        <button class="fadeIn fourth" [disabled]="!RegisterForm.valid">Sign Up</button>
+      </form>
+    </ng-template>
   </div>
 </div>
