@@ -15,6 +15,7 @@ import {AboutUsComponent} from './components/about-us/about-us.component';
 import {PageNotFountComponent} from "./components/page-not-fount/page-not-fount.component";
 import { DashboardMainPageComponent } from './components/dashboard/dashboard-main-page/dashboard-main-page.component';
 import {SidebarModule} from "ng-sidebar";
+import { UploadContractComponent } from './components/dashboard/upload-contract/upload-contract.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import {SidebarModule} from "ng-sidebar";
     MyAccountComponent,
     HomePageComponent,
     AboutUsComponent,
-    DashboardMainPageComponent
+    DashboardMainPageComponent,
+    UploadContractComponent
   ],
   imports: [
     AppRoutingModule,

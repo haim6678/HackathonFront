@@ -1,3 +1,23 @@
-<p>
-  dashboard-main-page works!
-</p>
+<body>
+<div class="side">
+
+  <!-- A sidebar -->
+  <div [(opened)]="_opened" class="nav">
+    <ul>
+      <li>
+        <a routerLink="upload" routerLinkActive="active">
+          <i class="fa fa-chart-pie"></i>
+          Upload Contract
+        </a>
+      </li>
+    </ul>
+
+  </div>
+</div>
+
+<div>
+  <div class="dash-content" id='router'>
+    <router-outlet></router-outlet>
+  </div>
+</div>
+</body>

@@ -1,0 +1,57 @@
+.side {
+  height: 100vh;
+  background-color: #cccccc;
+  width: 15vw;
+  font-size: 18px;
+  border-radius: 2%;
+  box-shadow: 5px 1px 30px grey;
+  float: left;
+}
+
+.nav {
+  color: black;
+}
+
+.content {
+  margin-left: 4%;
+  margin-top: 2%;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  color: black;
+}
+
+li {
+  float: left;
+}
+
+li {
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li :hover {
+  color: blue;
+  font-size: 17px;
+  z-index: 600;
+  text-decoration: none;
+  transition: all 0.4s
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.dash-content {
+  float: left;
+  width: 70%;
+  margin-left: 13%;
+  margin-top: 10%;
+}
