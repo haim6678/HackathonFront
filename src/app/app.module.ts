@@ -14,6 +14,7 @@ import {HomePageComponent} from "./components/home-page/home-page.component";
 import {AboutUsComponent} from './components/about-us/about-us.component';
 import {PageNotFountComponent} from "./components/page-not-fount/page-not-fount.component";
 import { DashboardMainPageComponent } from './components/dashboard/dashboard-main-page/dashboard-main-page.component';
+import {SidebarModule} from "ng-sidebar";
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { DashboardMainPageComponent } from './components/dashboard/dashboard-mai
     BrowserModule,
     BrowserModule,
     FormsModule,
+    SidebarModule.forRoot(),
     HttpClientModule,
   ],
   schemas: [NO_ERRORS_SCHEMA],
