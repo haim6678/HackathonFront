@@ -5,10 +5,12 @@ import {LogInComponent} from "./components/log-in/log-in.component";
 import {PageNotFountComponent} from "./components/page-not-fount/page-not-fount.component";
 import {DashboardMainPageComponent} from "./components/dashboard/dashboard-main-page/dashboard-main-page.component";
 import {UploadContractComponent} from "./components/dashboard/upload-contract/upload-contract.component";
+import {AboutUsComponent} from "./components/about-us/about-us.component";
 
 const appRoutes: Routes = [
 
   {path: 'not-found', component: PageNotFountComponent},
+  {path: 'aboutUs', component: AboutUsComponent},
   {path: '', component: HomePageComponent, pathMatch: 'full'},
   {path: 'userCenter/:action', component: LogInComponent},
   {
