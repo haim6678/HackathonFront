@@ -19,6 +19,9 @@ import {UploadContractComponent} from './components/dashboard/upload-contract/up
 import {MyContractsComponent} from './components/dashboard/my-contracts/my-contracts.component';
 import {PermissionService} from "./services/PermissionService";
 import {AuthGuardService} from "./services/AuthGuardService";
+import {ModalModule} from 'ngx-bootstrap/modal';
+import { ContractModalComponent } from './components/dashboard/contract-modal/contract-modal.component';
+import { UserContractHistoryComponent } from './components/dashboard/user-contract-history/user-contract-history.component';
 
 
 @NgModule({
@@ -33,13 +36,16 @@ import {AuthGuardService} from "./services/AuthGuardService";
     AboutUsComponent,
     DashboardMainPageComponent,
     UploadContractComponent,
-    MyContractsComponent
+    MyContractsComponent,
+    ContractModalComponent,
+    UserContractHistoryComponent
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
     BrowserModule,
     FormsModule,
+    ModalModule.forRoot(),
     SidebarModule.forRoot(),
     HttpClientModule,
   ],

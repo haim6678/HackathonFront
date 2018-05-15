@@ -8,7 +8,7 @@ import {Web3Service} from "../../services/web3Service";
 })
 export class HomePageComponent implements OnInit {
 
-  constructor(private web:Web3Service) {
+  constructor() {
   }
 
   ngOnInit() {

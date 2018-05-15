@@ -41,6 +41,13 @@ h1 {
   color: #666; /* Color del texto de las pestañas al pasar el cursor por encima */
 }
 
+.mod {
+  max-width: 800px ;
+}
+
+.point{
+  cursor: pointer;
+}
 #container input:checked + label {
   background: #f1f1f1; /* Fondo de las pestañas al presionar */
   color: #444; /* Color de las pestañas al presionar */
@@ -61,6 +68,8 @@ h1 {
   position: relative;
   width: 100%;
   z-index: 5;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 #content div {
@@ -68,37 +77,15 @@ h1 {
   padding: 1.5em;
   position: absolute;
   z-index: -100;
-  /*
-    transition: all linear 0.1s;
-    */
+
 }
 
-#content-1 p {
-  clear: both;
-  margin-bottom: 1em;
+#content-1 {
+  width: 100%;
 }
 
-#content-1 p.left img {
-  float: left;
-  margin-right: 1em;
-}
-
-#content-1 p.last {
-  margin-bottom: 0;
-}
-
-#content-2 p {
-  float: left;
-  width: 48.5%;
-}
-
-#content-2 p.column-right {
-  margin-left: 3%;
-}
-
-#content-2 p img {
-  display: block;
-  margin: 0 auto 1em auto;
+#content-2 {
+  width: 100%;
 }
 
 #content-3 p,
@@ -120,3 +107,5 @@ h1 {
 input.visible {
   visibility: visible !important;
 }
+
+

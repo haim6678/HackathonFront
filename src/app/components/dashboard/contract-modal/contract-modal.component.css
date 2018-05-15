@@ -1,0 +1,19 @@
+
+.buyers {
+  float: left;
+  width: 40%;
+}
+
+.sellers {
+  float: right;
+  width: 40%;
+  background-color:inherit;
+}
+
+li {
+  list-style-type: upper-roman;
+}
+
+.bod{
+
+}

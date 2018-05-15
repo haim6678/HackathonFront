@@ -1,5 +1,6 @@
-<body>
-
+<ng-template #template>
+  <app-contract-modal [contractInfo]="contractForModal"></app-contract-modal>
+</ng-template>
 <h1>My Contracts</h1>
 
 <div id="container">
@@ -13,12 +14,48 @@
   <div id="content">
 
     <div id="content-1">
-      <p class="left">haim</p>
+      <table class="table">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Contract Name</th>
+          <th scope="col">Sellers</th>
+          <th scope="col">Buyers</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="point" (click)="openModal(template,i,'signed')"
+            *ngFor="let contract of signedContract;let i = index">
+          <th scope="row">{{i+1}}</th>
+          <td>{{contract.contractName}}</td>
+          <td>{{contract.buyers[0]}}</td>
+          <td>{{contract.sellers[0]}}</td>
+        </tr>
+        </tbody>
+      </table>
     </div>
 
     <div id="content-2">
-      <p class="left">rub</p>
+      <table class="table">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Contract Name</th>
+          <th scope="col">Sellers</th>
+          <th scope="col">Buyers</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr
+          class="point" (click)="openModal(template,i,'unsigned')"
+          *ngFor="let contract of unSignedContract;let i = index">
+          <th scope="row">{{i+1}}</th>
+          <td>{{contract.contractName}}</td>
+          <td>{{contract.buyers[0]}}</td>
+          <td>{{contract.sellers[0]}}</td>
+        </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
-</body>

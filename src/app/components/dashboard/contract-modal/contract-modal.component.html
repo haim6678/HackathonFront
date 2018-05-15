@@ -1,0 +1,30 @@
+<div>
+  <div class="modal-header" style="text-align: center">
+    <h4 class="modal-title pull-left">Contract Info</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body bod">
+    <h4 style="text-align: center">Contract Name : {{contractInfo.contractName}}</h4>
+    <div style="margin-top: 6%">
+      <div class="buyers">
+        <h4>Buyers</h4>
+        <ul>
+          <li *ngFor="let contract of contractInfo.buyers ">
+            <div>{{contract}}</div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sellers">
+        <h4>Sellers</h4>
+        <ul>
+          <li *ngFor="let contract of contractInfo.sellers ">
+            <div>{{contract}}</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

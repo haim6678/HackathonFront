@@ -8,6 +8,7 @@ import {UploadContractComponent} from "./components/dashboard/upload-contract/up
 import {AboutUsComponent} from "./components/about-us/about-us.component";
 import {MyContractsComponent} from "./components/dashboard/my-contracts/my-contracts.component";
 import {AuthGuardService} from "./services/AuthGuardService";
+import {UserContractHistoryComponent} from "./components/dashboard/user-contract-history/user-contract-history.component";
 
 const appRoutes: Routes = [
 
@@ -19,6 +20,7 @@ const appRoutes: Routes = [
     path: 'dashboard', component: DashboardMainPageComponent, canActivate: [AuthGuardService], children: [
     {path: 'upload', component: UploadContractComponent},
     {path: 'myContracts', component: MyContractsComponent},
+    {path: 'history', component: UserContractHistoryComponent},
   ]
   },
   {path: '**', redirectTo: '/not-found'}

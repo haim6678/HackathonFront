@@ -13,6 +13,7 @@ export class UploadContractComponent implements OnInit {
   usersAssignToContract: { userId: string }[] = [{userId: ''}];
   sellerAssignToContract: { sellerId: string }[] = [{sellerId: ''}];
   fileName = 'No file chosen...';
+  contractName = '';
   fileStream = null;
 
   constructor(private  http: HttpClient) {
