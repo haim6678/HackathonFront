@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Params, Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
+import {PermissionService} from "../../services/PermissionService";
 
 @Component({
   selector: 'app-log-in',
@@ -22,7 +23,8 @@ export class LogInComponent implements OnInit {
 
   constructor(private router: Router,
               private routeManager: ActivatedRoute,
-              private http: HttpClient) {
+              private http: HttpClient,
+              private permi: PermissionService) {
   }
 
   navigate(value) {
@@ -50,8 +52,8 @@ export class LogInComponent implements OnInit {
       phone: this.userPhone
     }).subscribe(
       (response: any) => {
-
         console.log('success register');
+        this.permi.setCurrentUser(response.token);
         this.router.navigate(['']);
       },
       (error) => {
@@ -71,6 +73,7 @@ export class LogInComponent implements OnInit {
       (response: any) => {
 
         console.log('success login');
+        this.permi.setCurrentUser(response.token);
         this.router.navigate(['']);
       },
       (error) => {

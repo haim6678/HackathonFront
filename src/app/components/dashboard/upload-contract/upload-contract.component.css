@@ -90,6 +90,22 @@ input[type=text], input[type=password] {
   border-radius: 5px 5px 5px 5px;
 }
 
+.left {
+  margin-bottom: 5%;
+  float: left;
+  width: 50%;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold
+}
+
+.right {
+  margin-bottom: 5%;
+  float: left;
+  width: 50%;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold
+}
+
 input[type=text]:focus {
   background-color: #fff;
   border-bottom: 2px solid #5fbae9;

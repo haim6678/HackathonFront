@@ -15,16 +15,33 @@
 
   <div class="usersSection">
 
-    <div>
-      <h1 style="text-align: center;margin-bottom: 5%">Contract Parties</h1>
-      <button (click)="addUser()" class="btn-xs sm">+</button>
-    </div>
 
-    <div style="margin-bottom: 5%;  font-family: Helvetica, Arial, sans-serif;font-weight: bold">
+    <h1 style="text-align: center;margin-bottom: 5%">Contract Parties</h1>
+
+    <div class="left">
+      <div>
+        <button (click)="addUser()" class="btn-xs sm">+</button>
+      </div>
+
       <div class="party" *ngFor="let user of usersAssignToContract;let i = index">
         <input type="text" placeholder="Enter Party Phone" [(ngModel)]="user.userId">
       </div>
+
     </div>
+
+    <div class="right">
+
+      <div>
+        <button (click)="addSeller()" class="btn-xs sm">+</button>
+      </div>
+
+      <div>
+        <div class="party" *ngFor="let user of sellerAssignToContract;let i = index">
+          <input type="text" placeholder="Enter Seller Phone" [(ngModel)]="user.sellerId">
+        </div>
+      </div>
+    </div>
+
 
     <button [disabled]="!validateContractInfo()"
             [ngClass]="{'disable':!validateContractInfo(),'up':validateContractInfo() }"

@@ -13,10 +13,12 @@ import {MyAccountComponent} from './components/my-account/my-account.component';
 import {HomePageComponent} from "./components/home-page/home-page.component";
 import {AboutUsComponent} from './components/about-us/about-us.component';
 import {PageNotFountComponent} from "./components/page-not-fount/page-not-fount.component";
-import { DashboardMainPageComponent } from './components/dashboard/dashboard-main-page/dashboard-main-page.component';
+import {DashboardMainPageComponent} from './components/dashboard/dashboard-main-page/dashboard-main-page.component';
 import {SidebarModule} from "ng-sidebar";
-import { UploadContractComponent } from './components/dashboard/upload-contract/upload-contract.component';
-import { MyContractsComponent } from './components/dashboard/my-contracts/my-contracts.component';
+import {UploadContractComponent} from './components/dashboard/upload-contract/upload-contract.component';
+import {MyContractsComponent} from './components/dashboard/my-contracts/my-contracts.component';
+import {PermissionService} from "./services/PermissionService";
+import {AuthGuardService} from "./services/AuthGuardService";
 
 
 @NgModule({
@@ -42,7 +44,7 @@ import { MyContractsComponent } from './components/dashboard/my-contracts/my-con
     HttpClientModule,
   ],
   schemas: [NO_ERRORS_SCHEMA],
-  providers: [Web3Service],
+  providers: [Web3Service, PermissionService, AuthGuardService],
   bootstrap: [AppComponent]
 })
 

@@ -13,7 +13,7 @@
       <li class="navbar-wagon-item ">
         <a routerLink="" class="">Home Page</a>
       </li>
-      <li routerLink="/dashboard" class="navbar-wagon-item ">
+      <li *ngIf="userAuthorized" routerLink="/dashboard" class="navbar-wagon-item ">
         <a> <i class="fa fa-chart-line"></i> Your Dashboard</a>
       </li>
       <li routerLink="/aboutUs" class="navbar-wagon-item ">
@@ -26,9 +26,16 @@
 
   <div class="right hidden-xs hidden-sm">
 
-    <a [routerLink]="['/userCenter','login']" class="navbar-wagon-item "> <i class="fa fa-user"></i> Log-In</a>
-    <a [routerLink]="['/userCenter','register']" class="navbar-wagon-item "> <i
+
+    <a *ngIf="!userAuthorized" [routerLink]="['/userCenter','login']" class="navbar-wagon-item "> <i
+      class="fa fa-user"></i> Log-In</a>
+    <a *ngIf="!userAuthorized" [routerLink]="['/userCenter','register']" class="navbar-wagon-item "> <i
       class="fa fa-pencil-alt"></i>Register</a>
+
+    <a routerLink="" *ngIf="userAuthorized" (click)="logOut()" class="inact "> <i
+      class="fa fa-user"></i> Log-Out</a>
+    <a routerLink="" *ngIf="userAuthorized" class="inact"> <i
+      class="fa fa-pencil-alt"></i>Welcome</a>
 
 
   </div>

@@ -31,146 +31,158 @@ export class Web3Service {
 
 
     //copy abi from remix compile/details tab - this is the contract API
-    let testContract = this.web3.eth.contract([
-      {
-        "anonymous": false,
-        "inputs": [
-          {
-            "indexed": false,
-            "name": "name",
-            "type": "string"
-          },
-          {
-            "indexed": false,
-            "name": "age",
-            "type": "uint256"
-          }
-        ],
-        "name": "Instructor",
-        "type": "event"
-      },
-      {
-        "constant": false,
-        "inputs": [
-          {
-            "name": "_fName",
-            "type": "string"
-          },
-          {
-            "name": "_age",
-            "type": "uint256"
-          }
-        ],
-        "name": "setInstructor",
-        "outputs": [],
-        "payable": false,
-        "stateMutability": "nonpayable",
-        "type": "function"
-      },
-      {
-        "constant": true,
-        "inputs": [],
-        "name": "getInstructor",
-        "outputs": [
-          {
-            "name": "",
-            "type": "string"
-          },
-          {
-            "name": "",
-            "type": "uint256"
-          }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-      }
-    ]);
+    let testContract = this.web3.eth.contract(
+      [
+        {
+          "constant": false,
+          "inputs": [
+            {
+              "name": "_fName",
+              "type": "string"
+            },
+            {
+              "name": "_age",
+              "type": "uint256"
+            }
+          ],
+          "name": "setInstructor",
+          "outputs": [],
+          "payable": false,
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "constant": true,
+          "inputs": [],
+          "name": "getInstructor",
+          "outputs": [
+            {
+              "name": "",
+              "type": "string"
+            },
+            {
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "payable": false,
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "name": "age",
+              "type": "uint256"
+            }
+          ],
+          "name": "Instructor",
+          "type": "event"
+        }
+      ]
+    );
 
     // this is the contract address, the contract address is from remix run tab after create click
-    let contractAddress = '0x0c6f08546d8f7c837004f63ba373e3bec50b50bd';
+    let contractAddress = '0x5a89a15a55daad3ba9cb2a072196e8243d2a5041';
     //define contract
     let test = testContract.at(contractAddress);
 
-
-    //perform transaction in async way
-    const get = async (web3, account) => {
-
-      //get account balance
-      const balance = await web3.eth.getBalance(account);
-      test.getInstructor(function (error, result) {
-        if (!error) {
-          //console.log(result)
-        } else {
-          //console.error(error);
-        }
-      });
-      return balance;
-    };
-
-    // this is sync ????
-    test.getInstructor(function (error, result) {
-      if (!error) {
-        //console.log(result)
-      } else {
-        //console.error(error);
-      }
-    });
-
-
-    //get block by clock num
-    let Block = this.web3.eth.getBlock(15);
-    console.log(Block);
-
-
-    //get all transactions in block details by transaction num
-    Block.transactions.forEach((e) => {
-      let getT = this.web3.eth.getTransaction(e);
-      console.log(getT);
-      let Tdata = this.web3.toAscii(getT.input);
-      if (getT.to == "needed Address") {
-        console.log("find");
-      }
-    });
-
-    get(this.web3, this.web3.eth.accounts[0]);
-
-
-    //listen to event on contract instead of requesting over and over
-    //the parameters are optional
-    let instructorEvent = test.Instructor({}, {fromBlock: 17, toBlock: 'latest'});
-
-    instructorEvent.watch(function (error, result) {
-      if (!error) {
-        //console.log(result);
-      } else {
-        //console.log(error);
-      }
-    });
-
-    test.setInstructor('haim', 3, (result, err) => {
-    });
-
-
-    // listen to even, and filter income
-    const filter = this.web3.eth.filter({
-      fromBlock: 0,
-      toBlock: 5,
-      address: contractAddress
-    });
-
-    filter.watch((error, result) => {
-      //console.log(result);
-    });
-
-    //get number of sent transactions
-    let num = this.web3.eth.getTransactionCount(this.web3.eth.accounts[0]);
-    //console.log(num);
+    // test.getInstructor(function (error, result) {
+    //   if (!error) {
+    //     console.log(result)
+    //   } else {
+    //     console.error(error);
+    //   }
+    // });
+    //
+    // test.setInstructor('haim', 33);
+    //
+    // //perform transaction in async way
+    // const get = async (web3, account) => {
+    //
+    //
+    //   //get account balance
+    //   const balance = await web3.eth.getBalance(account);
+    //   test.getInstructor(function (error, result) {
+    //     if (!error) {
+    //       console.log(result)
+    //     } else {
+    //       console.error(error);
+    //     }
+    //   });
+    //   return balance;
+    // };
+    //
+    // // this is sync ????
+    // test.getInstructor(function (error, result) {
+    //   if (!error) {
+    //     console.log(result)
+    //   } else {
+    //     console.error(error);
+    //   }
+    // });
+    //
+    //
+    // //get block by clock num
+    // let Block = this.web3.eth.getBlock(15);
+    // console.log(Block);
+    //
+    //
+    // //get all transactions in block details by transaction num
+    // Block.transactions.forEach((e) => {
+    //   let getT = this.web3.eth.getTransaction(e);
+    //   console.log(getT);
+    //   let Tdata = this.web3.toAscii(getT.input);
+    //   if (getT.to == "needed Address") {
+    //     //console.log("find");
+    //   }
+    // });
+    //
+    // get(this.web3, this.web3.eth.accounts[0]);
+    //
+    //
+    // //listen to event on contract instead of requesting over and over
+    // //the parameters are optional
+    // let instructorEvent = test.Instructor({}, {fromBlock: 17, toBlock: 'latest'});
+    //
+    // instructorEvent.watch(function (error, result) {
+    //   if (!error) {
+    //     //console.log(result);
+    //   } else {
+    //     //console.log(error);
+    //   }
+    // });
+    //
+    // test.setInstructor('haim', 3, (result, err) => {
+    //   // console.log(result);
+    // });
+    //
+    //
+    // // listen to even, and filter income
+    // const filter = this.web3.eth.filter({
+    //   fromBlock: 0,
+    //   toBlock: 5,
+    //   address: contractAddress
+    // });
+    //
+    // filter.watch((error, result) => {
+    //   //console.log(result);
+    // });
+    //
+    // //get number of sent transactions
+    // let num = this.web3.eth.getTransactionCount(this.web3.eth.accounts[0]);
+    // //console.log(num);
 
     //get last range of transactions for given account
-    let temp = this.getTransactionsByAccount(this.web3.eth.accounts[0], 15, 20);
-    console.log(temp)
-
+    let temp = this.getTransactionsByAccount(this.web3.eth.accounts[0], 0, 20);
+    //console.log(temp)
   }
 
   getTransactionsByAccount(myaccount, startBlockNumber, endBlockNumber) {
@@ -191,10 +203,11 @@ export class Web3Service {
         console.log("Searching block " + i);
       }
       let block = this.web3.eth.getBlock(i, true);
+      console.log(block);
       if (block != null && block.transactions != null) {
         block.transactions.forEach(function (e) {
           if (myaccount == "*" || myaccount == e.from || myaccount == e.to) {
-            console.log(e);
+            //console.log(e);
             arr.push(e);
           }
         })

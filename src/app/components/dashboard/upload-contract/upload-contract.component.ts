@@ -11,6 +11,7 @@ export class UploadContractComponent implements OnInit {
 
   file: File = null;
   usersAssignToContract: { userId: string }[] = [{userId: ''}];
+  sellerAssignToContract: { sellerId: string }[] = [{sellerId: ''}];
   fileName = 'No file chosen...';
   fileStream = null;
 
@@ -22,6 +23,10 @@ export class UploadContractComponent implements OnInit {
 
   addUser() {
     this.usersAssignToContract.push({userId: ''});
+  }
+
+  addSeller() {
+    this.sellerAssignToContract.push({sellerId: ''});
   }
 
   fileChange(event) {

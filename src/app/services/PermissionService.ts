@@ -8,11 +8,15 @@ export class PermissionService {
 
   checkIfUserAuthorized() {
 
-    let token = JSON.parse(this.storageObj.getItem(userKeyInStorage)).token;
-    return !isNullOrUndefined(token) && token !== '';
+    let obj = JSON.parse(this.storageObj.getItem(this.userKeyInStorage));
+    return !isNullOrUndefined(obj) && obj.token !== '';
   }
 
   setCurrentUser(token: string) {
-    this.storageObj.setItem(userKeyInStorage, JSON.stringify({token: token}));
+    this.storageObj.setItem(this.userKeyInStorage, JSON.stringify({token: token}));
+  }
+
+  removeUser() {
+    this.storageObj.removeItem(this.userKeyInStorage);
   }
 }
