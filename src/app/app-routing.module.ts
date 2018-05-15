@@ -6,6 +6,8 @@ import {PageNotFountComponent} from "./components/page-not-fount/page-not-fount.
 import {DashboardMainPageComponent} from "./components/dashboard/dashboard-main-page/dashboard-main-page.component";
 import {UploadContractComponent} from "./components/dashboard/upload-contract/upload-contract.component";
 import {AboutUsComponent} from "./components/about-us/about-us.component";
+import {MyContractsComponent} from "./components/dashboard/my-contracts/my-contracts.component";
+import {AuthGuardService} from "./services/AuthGuardService";
 
 const appRoutes: Routes = [
 
@@ -14,8 +16,9 @@ const appRoutes: Routes = [
   {path: '', component: HomePageComponent, pathMatch: 'full'},
   {path: 'userCenter/:action', component: LogInComponent},
   {
-    path: 'dashboard', component: DashboardMainPageComponent, children: [
+    path: 'dashboard', component: DashboardMainPageComponent, canActivate: [AuthGuardService], children: [
     {path: 'upload', component: UploadContractComponent},
+    {path: 'myContracts', component: MyContractsComponent},
   ]
   },
   {path: '**', redirectTo: '/not-found'}

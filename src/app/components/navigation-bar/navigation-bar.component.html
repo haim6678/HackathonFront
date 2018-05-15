@@ -13,14 +13,8 @@
       <li class="navbar-wagon-item ">
         <a routerLink="" class="">Home Page</a>
       </li>
-      <li class="navbar-wagon-item ">
-        <a routerLink="" class="">Products</a>
-      </li>
-      <li class="navbar-wagon-item ">
-        <a>Contracts</a>
-      </li>
       <li routerLink="/dashboard" class="navbar-wagon-item ">
-        <a>Your Dashboard</a>
+        <a> <i class="fa fa-chart-line"></i> Your Dashboard</a>
       </li>
       <li routerLink="/aboutUs" class="navbar-wagon-item ">
         <a>About Us</a>
@@ -32,8 +26,9 @@
 
   <div class="right hidden-xs hidden-sm">
 
-    <a [routerLink]="['/userCenter','login']" class="navbar-wagon-item "><span></span> <i class="fab fa-500px"></i>Log-In</a>
-    <a [routerLink]="['/userCenter','register']" class="navbar-wagon-item ">Register</a>
+    <a [routerLink]="['/userCenter','login']" class="navbar-wagon-item "> <i class="fa fa-user"></i> Log-In</a>
+    <a [routerLink]="['/userCenter','register']" class="navbar-wagon-item "> <i
+      class="fa fa-pencil-alt"></i>Register</a>
 
 
   </div>

@@ -4,10 +4,23 @@
   <!-- A sidebar -->
   <div [(opened)]="_opened" class="nav">
     <ul>
+
+      <li>
+        <a routerLink="myContracts" routerLinkActive="active">
+          <i class="fa fa-chart-pie"></i>
+          My Contracts
+        </a>
+      </li>
       <li>
         <a routerLink="upload" routerLinkActive="active">
           <i class="fa fa-chart-pie"></i>
           Upload Contract
+        </a>
+      </li>
+      <li>
+        <a routerLink="upload" routerLinkActive="active">
+          <i class="fa fa-chart-pie"></i>
+          Show user history
         </a>
       </li>
     </ul>

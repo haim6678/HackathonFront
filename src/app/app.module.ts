@@ -16,6 +16,7 @@ import {PageNotFountComponent} from "./components/page-not-fount/page-not-fount.
 import { DashboardMainPageComponent } from './components/dashboard/dashboard-main-page/dashboard-main-page.component';
 import {SidebarModule} from "ng-sidebar";
 import { UploadContractComponent } from './components/dashboard/upload-contract/upload-contract.component';
+import { MyContractsComponent } from './components/dashboard/my-contracts/my-contracts.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { UploadContractComponent } from './components/dashboard/upload-contract/
     HomePageComponent,
     AboutUsComponent,
     DashboardMainPageComponent,
-    UploadContractComponent
+    UploadContractComponent,
+    MyContractsComponent
   ],
   imports: [
     AppRoutingModule,
@@ -43,6 +45,7 @@ import { UploadContractComponent } from './components/dashboard/upload-contract/
   providers: [Web3Service],
   bootstrap: [AppComponent]
 })
+
 export class AppModule {
 }
 

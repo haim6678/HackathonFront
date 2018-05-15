@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Params, Router} from "@angular/router";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-log-in',
@@ -11,14 +12,17 @@ export class LogInComponent implements OnInit {
   email = '';
   password = '';
   registerEmail = '';
-  registerName = '';
+  registerLastName = '';
+  registerFirstName = '';
   registerPassword = '';
+  userPhone = '';
   registerReEnterPassword = '';
 
   action;
 
   constructor(private router: Router,
-              private routeManager: ActivatedRoute) {
+              private routeManager: ActivatedRoute,
+              private http: HttpClient) {
   }
 
   navigate(value) {
@@ -36,13 +40,43 @@ export class LogInComponent implements OnInit {
     );
   }
 
-  onRegister(){
+  onRegister() {
 
-    this.router.navigate(['']);
+    this.http.post('http://40.115.124.134/api/register', {
+      email: this.registerEmail,
+      password: this.registerPassword,
+      first_name: this.registerFirstName,
+      last_name: this.registerLastName,
+      phone: this.userPhone
+    }).subscribe(
+      (response: any) => {
+
+        console.log('success register');
+        this.router.navigate(['']);
+      },
+      (error) => {
+        console.error('error register');
+      }
+    );
+
   }
 
   onLogIn() {
 
-    this.router.navigate(['']);
+
+    this.http.post('http://40.115.124.134/api/login', {
+      email: this.email,
+      password: this.password
+    }).subscribe(
+      (response: any) => {
+
+        console.log('success login');
+        this.router.navigate(['']);
+      },
+      (error) => {
+        console.error('error login');
+      }
+    );
+
   }
 }

@@ -1,3 +1,36 @@
-<p>
-  upload-contract works!
-</p>
+<div class="container">
+
+  <div class="file-upload">
+    <h1 style="text-align: center; margin-bottom: 6%">
+      Choose Contract
+    </h1>
+    <div class="file-select">
+      <div class="file-select-button" id="fileName">Choose File</div>
+      <div class="file-select-name" id="noFile">{{fileName}}</div>
+      <input name="chooseFile" id="chooseFile" accept=".pdf,.doc,.docx" placeholder="Upload file"
+             (change)="fileChange($event)"
+             type="file" class="file-upload-field" value="">
+    </div>
+  </div>
+
+  <div class="usersSection">
+
+    <div>
+      <h1 style="text-align: center;margin-bottom: 5%">Contract Parties</h1>
+      <button (click)="addUser()" class="btn-xs sm">+</button>
+    </div>
+
+    <div style="margin-bottom: 5%;  font-family: Helvetica, Arial, sans-serif;font-weight: bold">
+      <div class="party" *ngFor="let user of usersAssignToContract;let i = index">
+        <input type="text" placeholder="Enter Party Phone" [(ngModel)]="user.userId">
+      </div>
+    </div>
+
+    <button [disabled]="!validateContractInfo()"
+            [ngClass]="{'disable':!validateContractInfo(),'up':validateContractInfo() }"
+            (click)="sendContract()"> upload
+    </button>
+  </div>
+
+
+</div>

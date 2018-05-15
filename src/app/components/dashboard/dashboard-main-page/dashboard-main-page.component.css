@@ -1,10 +1,10 @@
 .side {
   height: 100vh;
-  background-color: #cccccc;
+  background-color: #666;
   width: 15vw;
   font-size: 18px;
-  border-radius: 2%;
-  box-shadow: 5px 1px 30px grey;
+  border-top-right-radius: 1%;
+  border-down-right-radius: 1%;
   float: left;
 }
 
@@ -27,6 +27,7 @@ ul {
 
 li {
   float: left;
+  color: white;
 }
 
 li {
@@ -52,6 +53,6 @@ a {
 .dash-content {
   float: left;
   width: 70%;
-  margin-left: 13%;
-  margin-top: 10%;
+  margin-left: 5%;
+  margin-top: 6%;
 }

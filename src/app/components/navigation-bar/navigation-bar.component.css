@@ -15,6 +15,10 @@
   color: white;
 }
 
+span {
+  margin-right: 1%;
+}
+
 #logo .navbar-wagon-item .navbar-wagon-link {
   cursor: auto;
 }

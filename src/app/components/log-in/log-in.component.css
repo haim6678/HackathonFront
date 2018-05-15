@@ -148,6 +148,10 @@ input[type=text]:focus {
   border-bottom: 2px solid #5fbae9;
 }
 
+input[type=text]:placeholder {
+  color: #cccccc;
+}
+
 input[type=password]:focus {
   background-color: #fff;
   border-bottom: 2px solid #5fbae9;
@@ -157,9 +161,7 @@ input[type=password]:placeholder {
   color: #cccccc;
 }
 
-input[type=text]:placeholder {
-  color: #cccccc;
-}
+
 
 /* ANIMATIONS */
 
